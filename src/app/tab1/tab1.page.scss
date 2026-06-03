@@ -1,0 +1,15 @@
+.custom-bg { --background: linear-gradient(135deg, #d6c4f4, #a88be8); }
+.white-card { background: white; border-radius: 20px; padding: 30px 20px; margin-top: 20px; text-align: center; box-shadow: 0 10px 30px rgba(108, 92, 231, 0.15); }
+.title { color: #4a3b72; font-weight: 900; margin-bottom: 5px; font-size: 1.8rem; }
+.subtitle { color: #7f7a93; margin-bottom: 30px; font-size: 1.05rem; }
+
+/* Botões coloridos que combinam com o lilás */
+.btn-sp { --background: #ff7675; --background-hover: #d63031; height: 65px; margin-bottom: 15px; font-weight: bold; font-size: 1.1rem; --border-radius: 12px; --box-shadow: 0 4px 12px rgba(255, 118, 117, 0.3); }
+.btn-se { --background: #fdcb6e; --background-hover: #e1b12c; --color: #2d3436; height: 65px; margin-bottom: 15px; font-weight: bold; font-size: 1.1rem; --border-radius: 12px; --box-shadow: 0 4px 12px rgba(253, 203, 110, 0.3); }
+.btn-sg { --background: #6c5ce7; --background-hover: #4834d4; height: 65px; margin-bottom: 15px; font-weight: bold; font-size: 1.1rem; --border-radius: 12px; --box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3); }
+
+.result-box { margin-top: 30px; padding-top: 20px; border-top: 2px dashed #e8e3f4; animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.result-box p { color: #7f7a93; font-size: 1.1rem; margin: 0; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+.senha-destaque { color: #6c5ce7; font-size: 3.2rem; font-weight: 900; margin: 10px 0; letter-spacing: 2px; text-shadow: 0 4px 10px rgba(108, 92, 231, 0.2); }
+
+@keyframes popIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }

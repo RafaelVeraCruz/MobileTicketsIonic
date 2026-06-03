@@ -1,17 +1,61 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background: #8e7cc3; color: white;">
+    <ion-title style="text-align: center; font-weight: bold;">Área do Atendente</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding custom-bg">
+  
+  <div class="white-card">
+    <h2 class="title">Controle de Chamadas</h2>
+    <p class="subtitle">Selecione o guichê para chamar o próximo:</p>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    <ion-button expand="block" class="btn-g1" (click)="chamar(1)">
+      Guichê 1 - Chamar
+    </ion-button>
+
+    <ion-button expand="block" class="btn-g2" (click)="chamar(2)">
+      Guichê 2 - Chamar
+    </ion-button>
+
+    <div *ngIf="senhaAtual" class="result-box">
+      <p>Senha a atender agora:</p>
+      <h1 class="senha-destaque">{{ senhaAtual.numero }}</h1>
+    </div>
+  </div>
+
+  <h2 class="section-title">Relatório Diário</h2>
+  
+  <div class="white-card report-card">
+    <div class="report-header">
+      <ion-icon name="pie-chart"></ion-icon> Visão Geral
+    </div>
+    <div class="report-row">
+      <strong>Total de Senhas Emitidas:</strong> 
+      <span class="badge badge-blue">{{ totalEmitidas }}</span>
+    </div>
+    <div class="report-row">
+      <strong>Total de Senhas Atendidas:</strong> 
+      <span class="badge badge-green">{{ totalAtendidas }}</span>
+    </div>
+  </div>
+
+  <div class="white-card report-card">
+    <div class="report-header">
+      <ion-icon name="list"></ion-icon> Por Prioridade
+    </div>
+    <div class="report-row-multi">
+      <div class="tag tag-red">Prioridade (SP)</div>
+      <div class="nums">Emitidas: <b>{{ emitidasPorTipo?.SP }}</b> &nbsp;|&nbsp; Atendidas: <b>{{ atendidasPorTipo?.SP }}</b></div>
+    </div>
+    <div class="report-row-multi">
+      <div class="tag tag-yellow">Exames (SE)</div>
+      <div class="nums">Emitidas: <b>{{ emitidasPorTipo?.SE }}</b> &nbsp;|&nbsp; Atendidas: <b>{{ atendidasPorTipo?.SE }}</b></div>
+    </div>
+    <div class="report-row-multi">
+      <div class="tag tag-purple">Geral (SG)</div>
+      <div class="nums">Emitidas: <b>{{ emitidasPorTipo?.SG }}</b> &nbsp;|&nbsp; Atendidas: <b>{{ atendidasPorTipo?.SG }}</b></div>
+    </div>
+  </div>
+
 </ion-content>

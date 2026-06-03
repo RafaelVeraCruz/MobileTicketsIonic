@@ -1,17 +1,25 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background: #8e7cc3; color: white;">
+    <ion-title style="text-align: center; font-weight: bold;">Painel de Chamadas</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding custom-bg">
+  <div class="white-card">
+    <h2 class="title">Últimas Chamadas</h2>
+    
+    <ion-list lines="none" class="bg-transparent">
+      <ion-item *ngFor="let senha of obterUltimasSenhas(); let i = index" [class.destaque-primeiro]="i === 0" class="item-senha">
+        <ion-label style="text-align: center;">
+          <h1 class="senha-numero">{{ senha.numero }}</h1>
+          <p class="senha-guiche">Guichê {{ senha.guiche }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <div *ngIf="obterUltimasSenhas().length === 0" class="empty-msg">
+      <ion-icon name="time-outline"></ion-icon>
+      <p>Nenhuma senha foi chamada ainda.</p>
+    </div>
+  </div>
 </ion-content>
